@@ -1,0 +1,167 @@
+﻿@model Web_Application_Higher_Institution.table_result
+
+@{
+    ViewBag.Title = "Create";
+}
+<br />
+<h2>Result Module</h2>
+<h4 class="text-center text-info">Semester Result Computation</h4>
+<hr />
+<h5 class="text-center text-danger">@ViewBag.Result</h5>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal col-lg-8" style="float:none; margin: 0 auto;">
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Acad. Year</label>
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Academic_Calender, (IEnumerable<SelectListItem>)ViewBag.acad_calenda, "Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Academic_Calender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Semester, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                   @Html.DropDownListFor(model => model.Semester, (IEnumerable<SelectListItem>)ViewBag.semeste, "Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Course</label>
+            <div class="col-md-10">
+               @Html.DropDownListFor(model => model.Course_Title, (IEnumerable<SelectListItem>)ViewBag.cours, "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Course_Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Stud. Name</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Student_Name, (IEnumerable<SelectListItem>)ViewBag.student_nam, "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Student_Name, "", new { @class = "text-danger" })
+            </div>
+        </div> 
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Score, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Score, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Score, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Confirm and Save Score" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+<script type="text/javascript">
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $window, $http) {
+
+       /* $http.post("/Result/fetchStudent").then(function (response) {
+            $scope.mods = response.data;
+            //alert(response.data);
+           // $scope.report = "";
+        });
+
+          $scope.display_student = function () {
+              $scope.report = "Loading, Please Wait ...";
+              $http.post("/Result/fetchStudent?id=" + $scope.clas).then(function (response) {
+                  $scope.mod = response.data;
+                  $scope.report = "";
+              });
+          }
+
+        $scope.display_id = function () {
+            $scope.report = "Loading, Please Wait ...";
+             $("#button_save").prop("disabled", true); $("#score_ca").prop("disabled", true); $("#score_exam").prop("disabled", true);
+           // angular.element(document.getElementById('button_save'))[0].disabled = true;
+            $scope.score_cbt = "";
+            $scope.category_cbt = "Select";
+            $scope.student_id = ""; $scope.score_ca = ""; $scope.score_exam = "";
+            $http.get("/Result/find_id?student_name=" + $scope.student_name).then(function (response) {
+                // alert(response.data);
+                $scope.student_id = response.data;
+            });
+            $http.post("/Result/Search_Score?category=" + $scope.category + "&&session=" + $scope.sessio + "&&term=" + $scope.term + "&&student_name=" + $scope.student_name + "&&subject=" + $scope.subjec).then(function (response) {
+                //  alert(response.data);
+                $scope.score_ca = response.data.Score_CA;
+                $scope.score_exam = response.data.Score_Exam;
+                $("#button_save").prop("disabled", false); $("#score_ca").prop("disabled", false); $("#score_exam").prop("disabled", false);
+                $scope.report = "";
+            });
+        }
+
+        $scope.display_cbt_score = function () {
+            $scope.report = "Loading, Please Wait ...";
+            $scope.score_cbt = "";
+            $http.get("/Result/display_cbt_score?category=" + $scope.category_cbt + "&&sessio=" + $scope.sessio + "&&ter=" + $scope.term + "&&clas=" + $scope.clas + "&&student_name=" + $scope.student_name + "&&subject=" + $scope.subjec).then(function (response) {
+                $scope.score_cbt = response.data;
+                $scope.report = "";
+            });
+        }
+
+        $scope.save_result = function ()
+        {
+            if (!$scope.category || !$scope.sessio || !$scope.term || !$scope.clas || !$scope.subjec) {
+                $scope.report = "Category, Session, Term, and Class must be Selected ...";
+                alert("Category, Session, Term, and Class must be Selected ...");
+            }
+            else if (!$scope.student_id) {
+                $scope.report = "Select Name of Student ...";
+                alert("Select Name of Student ...");
+            }
+
+            else {
+                $scope.report = "Saving, Preparing Response ...";
+                $("#button_save").prop("disabled", true); $("#score_ca").prop("disabled", true); $("#score_exam").prop("disabled", true);
+                // $http.get("/Result/Insert?student_name=" + $scope.student_name + "&&student_id=" + $scope.student_id + "&&subject=" + $scope.subjec + "&&score_ca=" + $scope.score_ca + "&&score_ca1=" + $scope.score_ca1 + "&&score_exam=" + $scope.score_exam + "&&category=" + $scope.category + "&&sessio=" + $scope.sessio + "&&term=" + $scope.term + "&&clas=" + $scope.clas).then(function (response) {
+                $http.get("/Result/Insert?student_name=" + $scope.student_name + "&&student_id=" + $scope.student_id + "&&subject=" + $scope.subjec + "&&score_ca=" + $scope.score_ca + "&&score_exam=" + $scope.score_exam + "&&category=" + $scope.category + "&&sessio=" + $scope.sessio + "&&term=" + $scope.term + "&&clas=" + $scope.clas).then(function (response) {
+                    $scope.report = response.data;
+                    $scope.score_ca = "";
+                    $scope.score_exam = "";
+                    $("#button_save").prop("disabled", false); $("#score_ca").prop("disabled", false); $("#score_exam").prop("disabled", false);
+                    alert(response.data);
+                });
+            }
+        }
+
+        $http.get("/Result/marks").then(function (response) {
+            $scope.g1 = response.data.First_Ca;
+            $scope.g2 = response.data.Second_Ca;
+            $scope.g3 = response.data.Exam;
+        });
+
+        $scope.chk1 = function () {
+            if ($scope.score_ca && (parseInt($scope.score_ca) > parseInt($scope.g1))) {
+                alert("First CA. Score Cannot be greater than " + $scope.g1);
+                $scope.score_ca = "";
+            }
+        }*/
+
+
+    });
+
+</script>

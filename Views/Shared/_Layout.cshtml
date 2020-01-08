@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ecole Supérieure des Sciences, de Commerce et d’Administration des Entreprises du Benin- ESCAE-BENIN</title>
+    <!--<%: Page.Title %> - ESCAE University. Admin Online Portal-->
+    <!-- Bootstrap Core CSS -->
+    <link href="/startmin/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/startmin/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="/startmin/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/startmin/css/startmin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/startmin/css/morris.css" rel="stylesheet">
+
+    <link href="/startmin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/startmin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/startmin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="/Scripts/angular.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <webopt:bundlereference runat="server" path="~/Content/css" />
+     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+    <style type="text/css">
+        .cust {
+            color:darkgreen;
+        }
+        </style>
+
+</head>
+<body ng-app="app" ng-controller="myctrl">
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">@Session["school"] - Institute Management System </a>
+
+            </div>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+           <!-- <ul class="nav navbar-nav navbar-left navbar-top-links">
+                <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+            </ul>-->
+
+            <ul class="nav navbar-right navbar-top-links">
+                <li class="dropdown navbar-inverse">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                    </a>
+                    <!--<ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>-->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> Login By => &nbsp; @Session["name"] &nbsp;||&nbsp; Active Since => &nbsp; @Session["time"] &nbsp;&nbsp;||&nbsp;&nbsp;  <input type="button" value="Log Out" class="btn-danger" onclick="logout()">  <b class="caret"></b>
+                    </a>
+                   <!-- <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>-->
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <!-- <li class="sidebar-search">
+                             <div class="input-group custom-search-form">
+                                 <input type="text" class="form-control" placeholder="Search...">
+                                 <span class="input-group-btn">
+                                     <button class="btn btn-primary" type="button">
+                                         <i class="fa fa-search"></i>
+                                     </button>
+                             </span>
+                             </div>
+
+                         </li>-->
+                        <li>
+                            <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        
+                      
+
+                        <li>
+                            <a href="/result/index"><i class="fa fa-table fa-fw"></i> Semester Result</a>
+                        </li>
+
+                        <!-- <li> <a href="/students/index"><i class="fa fa-table fa-fw"></i> Student</a>
+                         </li>-->
+                         <li>
+        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Student Record<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a href="/students/index">Student</a>
+            </li>
+            <li>
+                <a href="/students/edit_student_name">Update (Student's Name)</a>
+            </li>
+            <li>
+                <a href="/students/edit_student_id">Update (Matric No/ ID)</a>
+            </li>
+        </ul>
+    </li>
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Admin <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                
+                                <li>
+                                    <a href="/add_campus/index">Campus</a>
+                                </li>
+                                <li>
+                                    <a href="/add_faculty/Index">Faculty/School</a>
+                                </li>
+                                <li>
+                                    <a href="/add_department/index">Department</a>
+                                </li>
+                                <li>
+                                    <a href="/add_course/Index">Course</a>
+                                </li>
+                                <li>
+                                    <a href="/add_level/index">Level/ Year</a>
+                                </li>
+                                <li>
+                                    <a href="/add_program/Index">Program</a>
+                                </li>
+                                <li>
+                                    <a href="/add_semester/Index">Semester</a>
+                                </li>
+                                <li>
+                                    <a href="/add_status/Index">Status</a>
+                                </li>
+                                <li>
+                                    <a href="/add_campus/Index">Campus</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        
+                                              
+                        <li>
+                            <a href="/User/index"><i class="fa fa-edit fa-fw"></i> User Account</a>
+                        </li>
+                       <!-- <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/Users/ChangePassword">Add User</a>
+                                </li>
+                                <li>
+                                    <a href="/Users/Create">Report(Staff)</a>
+                                </li>
+                                <li>
+                                    <a href="/Users/Index">Report(Student)</a>
+                                </li>>
+                            </ul>
+                        </li>-->
+
+                       <!-- <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> User's Log<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="~/Report-Internal1.aspx">View Report Sheet</a>
+                                </li>
+                                <li>
+                                    <a href="/Home/Logout">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>-->
+
+                       <!-- <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>-->
+                       
+                        <!-- <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="panels-wells.html">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="notifications.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="icons.html"> Icons</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grid</a>
+                                </li>
+                            </ul>-->
+                            <!-- /.nav-second-level -->
+                       <!-- </li>-->
+
+                       <!-- <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton1" runat="server">LinkButton</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>-->
+                                    <!-- /.nav-third-level -->
+                               <!-- </li>
+                            </ul>-->
+                            <!-- /.nav-second-level -->
+                        <!--</li>-->
+                        <li>
+                            <a href="/Staff/index"><i class="fa fa-edit fa-fw"></i> Staff</a>
+                        </li>
+                        <li>
+                            <a href="/Extra/Change_Password"><i class="fa fa-table fa-fw"></i> Change Password</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> User's Log <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               <!-- <li>
+                                    <a href="~/Report-Internal1.aspx">View Report Sheet</a>
+                                </li>-->
+                                <li>
+                                    <a href="/Home/logout">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <!-- ########################################### START OF UNIQUE FOREIGN CONTENT ######################################################## -->
+            <div class="row" id="unique">
+                @RenderBody()
+
+            </div>
+            <!-- ########################################### END OF UNIQUE FOREIGN CONTENT ######################################################## -->
+            <!-- /.row -->
+            <!--<div class="row">
+                  jhjfhjshjjjjjjjjj kjudkhgkkkkkkkkkkkkkkkkkkkkkkkkkk ghjrhwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww yrtaytdytdyyyyyyyyyyyyyyyyyyy hgtuhghasgdhhhhhhhhhhhhhhhh hghghgggggggggggggggggggggg
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+
+                        <div class="panel-heading">
+
+                            <div class="row">
+                                  </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>-->
+            <!-- /.row -->
+            <div class="row" style=" visibility:hidden;">
+                <div class="col-lg-8" style=" visibility:hidden;">
+                    <div class="panel panel-default">
+
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style=" visibility:hidden;">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default" style=" visibility:hidden;">
+
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="morris-bar-chart"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4" style=" visibility:hidden;">
+
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <div id="morris-donut-chart"></div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="chat-panel panel panel-default" style=" visibility:hidden;">
+
+                        <!-- /.panel-heading -->
+                        <!-- /.panel-body -->
+                        <!-- /.panel-footer -->
+                    </div>
+                    <!-- /.panel .chat-panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+
+
+     @Scripts.Render("~/bundles/bootstrap")
+     @Scripts.Render("~/bundles/jquery")
+     @RenderSection("scripts", required: false)
+
+    <script src="/startmin/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/startmin/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/startmin/js/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/startmin/js/raphael.min.js"></script>
+    <script src="/startmin/js/morris.min.js"></script>
+    <script src="/startmin/js/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/startmin/js/startmin.js"></script>
+
+   
+    <script src="/startmin/js/table/jquery.dataTables.min.js"></script>
+    <script src="/startmin/js/table/jquery.dataTables.js"></script>
+
+
+    <!-- <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>-->
+
+    <script type="text/javascript">
+        function logout() {
+            window.open("/Home/Logout");
+        }
+    </script> 
+   
+</body>
+</html>

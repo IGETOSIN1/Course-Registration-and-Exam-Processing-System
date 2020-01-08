@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model_InstituteStoreContainer" CdmEntityContainer="Entities_Institute">
+    <EntitySetMapping Name="table_calendar_year">
+      <EntityTypeMapping TypeName="Model_Institute.table_calendar_year">
+        <MappingFragment StoreEntitySet="table_calendar_year">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="calendar_year" ColumnName="calendar_year" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_campus_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_campus_add">
+        <MappingFragment StoreEntitySet="table_campus_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="campus" ColumnName="campus" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_course_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_course_add">
+        <MappingFragment StoreEntitySet="table_course_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="course_code" ColumnName="course_code" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_course_register">
+      <EntityTypeMapping TypeName="Model_Institute.table_course_register">
+        <MappingFragment StoreEntitySet="table_course_register">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="matric_no" ColumnName="matric_no" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="course_code" ColumnName="course_code" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="calendar_year" ColumnName="calendar_year" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_department_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_department_add">
+        <MappingFragment StoreEntitySet="table_department_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_faculty_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_faculty_add">
+        <MappingFragment StoreEntitySet="table_faculty_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_grading_system">
+      <EntityTypeMapping TypeName="Model_Institute.table_grading_system">
+        <MappingFragment StoreEntitySet="table_grading_system">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="from1" ColumnName="from1" />
+          <ScalarProperty Name="to1" ColumnName="to1" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="gp1" ColumnName="gp1" />
+          <ScalarProperty Name="gp2" ColumnName="gp2" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="classification" ColumnName="classification" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_level_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_level_add">
+        <MappingFragment StoreEntitySet="table_level_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_mode_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_mode_add">
+        <MappingFragment StoreEntitySet="table_mode_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_program_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_program_add">
+        <MappingFragment StoreEntitySet="table_program_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="program" ColumnName="program" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="Registered_by" ColumnName="Registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_result">
+      <EntityTypeMapping TypeName="Model_Institute.table_result">
+        <MappingFragment StoreEntitySet="table_result">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="Academic_Calender" ColumnName="Academic_Calender" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Matric_No" ColumnName="Matric_No" />
+          <ScalarProperty Name="Course_Title" ColumnName="Course_Title" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Registered_By" ColumnName="Registered_By" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Last_Updated" ColumnName="Last_Updated" />
+          <ScalarProperty Name="Last_Updated_By" ColumnName="Last_Updated_By" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_school_details">
+      <EntityTypeMapping TypeName="Model_Institute.table_school_details">
+        <MappingFragment StoreEntitySet="table_school_details">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="School" ColumnName="School" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="L_U" ColumnName="L_U" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_semester_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_semester_add">
+        <MappingFragment StoreEntitySet="table_semester_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_staff">
+      <EntityTypeMapping TypeName="Model_Institute.table_staff">
+        <MappingFragment StoreEntitySet="table_staff">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="date_employed" ColumnName="date_employed" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_status_add">
+      <EntityTypeMapping TypeName="Model_Institute.table_status_add">
+        <MappingFragment StoreEntitySet="table_status_add">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_students">
+      <EntityTypeMapping TypeName="Model_Institute.table_students">
+        <MappingFragment StoreEntitySet="table_students">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="matric_no" ColumnName="matric_no" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+          <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="marital_status" ColumnName="marital_status" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="sponsor_name" ColumnName="sponsor_name" />
+          <ScalarProperty Name="sponsor_address" ColumnName="sponsor_address" />
+          <ScalarProperty Name="sponsor_relationship" ColumnName="sponsor_relationship" />
+          <ScalarProperty Name="sponsor_occupation" ColumnName="sponsor_occupation" />
+          <ScalarProperty Name="sponsor_phone" ColumnName="sponsor_phone" />
+          <ScalarProperty Name="sponsor_email" ColumnName="sponsor_email" />
+          <ScalarProperty Name="highest_qualification" ColumnName="highest_qualification" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="year_of_admission" ColumnName="year_of_admission" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="program" ColumnName="program" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+          <ScalarProperty Name="campus" ColumnName="campus" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="registered_by" ColumnName="registered_by" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_user">
+      <EntityTypeMapping TypeName="Model_Institute.table_user">
+        <MappingFragment StoreEntitySet="table_user">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="matric_no" ColumnName="matric_no" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="dat" ColumnName="dat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

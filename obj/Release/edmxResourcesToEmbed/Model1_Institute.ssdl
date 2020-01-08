@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model_Institute.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="table_calendar_year">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="calendar_year" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_campus_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="campus" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_course_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="course_code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Unit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_course_register">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="matric_no" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="course" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="course_code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="unit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Semester" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="calendar_year" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_department_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_faculty_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_grading_system">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="from1" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="to1" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="grade" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="gp1" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="gp2" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="remark" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="classification" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="last_updated" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_level_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_mode_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_program_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="program" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_result">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Academic_Calender" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Semester" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Matric_No" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Course_Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Course_Code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Unit" Type="decimal" Precision="65" Scale="1" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Score" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="GP" Type="decimal" Precision="65" Scale="2" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Registered_By" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Last_Updated" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="Last_Updated_By" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_school_details">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="School" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Date" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Website" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="L_U" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_semester_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Semester" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_staff">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="full_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="qualification" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date_employed" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_status_add">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_students">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="student_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="matric_no" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date_of_birth" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="place_of_birth" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sex" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nationality" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="marital_status" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="age" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_relationship" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_occupation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sponsor_email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="highest_qualification" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="qualification" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="year_of_admission" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="program" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="mode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="campus" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="note" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="registered_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_user">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="full_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="matric_no" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="role" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dat" Type="timestamp" Precision="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_add_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_add_ibfk_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_register_ibfk_11' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_register_ibfk_11" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_register_ibfk_12' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_register_ibfk_12" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_register_ibfk_6' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_register_ibfk_6" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_register_ibfk_7' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_register_ibfk_7" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_course_register_ibfk_8' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_course_register_ibfk_8" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_department_add_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_department_add_ibfk_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_program_add_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_program_add_ibfk_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_program_add_ibfk_2' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_program_add_ibfk_2" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_result_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_result_ibfk_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_result_ibfk_2' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_result_ibfk_2" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_result_ibfk_4' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_result_ibfk_4" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_result_ibfk_5' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_result_ibfk_5" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_result_ibfk_6' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_result_ibfk_6" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_students_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_students_ibfk_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_students_ibfk_2' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_students_ibfk_2" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_students_ibfk_4' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_students_ibfk_4" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_students_ibfk_5' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_students_ibfk_5" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'table_students_ibfk_6' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="table_students_ibfk_6" />-->
+  <EntityContainer Name="Model_InstituteStoreContainer">
+    <EntitySet Name="table_calendar_year" EntityType="Self.table_calendar_year" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_campus_add" EntityType="Self.table_campus_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_course_add" EntityType="Self.table_course_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_course_register" EntityType="Self.table_course_register" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_department_add" EntityType="Self.table_department_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_faculty_add" EntityType="Self.table_faculty_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_grading_system" EntityType="Self.table_grading_system" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_level_add" EntityType="Self.table_level_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_mode_add" EntityType="Self.table_mode_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_program_add" EntityType="Self.table_program_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_result" EntityType="Self.table_result" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_school_details" EntityType="Self.table_school_details" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_semester_add" EntityType="Self.table_semester_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_staff" EntityType="Self.table_staff" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_status_add" EntityType="Self.table_status_add" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_students" EntityType="Self.table_students" Schema="db_institute_ms" store:Type="Tables" />
+    <EntitySet Name="table_user" EntityType="Self.table_user" Schema="db_institute_ms" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

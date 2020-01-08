@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Web_Application_Higher_Institution.table_program_add>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h2>Program Module</h2>
+
+<h4 class="text-center text-info">List of Current Program/ Degree</h4>
+<hr />
+
+<p>
+    @Html.ActionLink("Add Program/ Degree", "Create")
+</p>
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped text-center">
+    <tr>
+        <th class="text-center">
+           Faculty
+        </th>
+        <th class="text-center">
+            Department
+        </th>
+        <th class="text-center">
+            Program
+        </th>
+       
+        <th class="text-center">
+            Last Updated
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.faculty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.program)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.dat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.p_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.p_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.p_id })
+        </td>
+    </tr>
+}
+
+</table>

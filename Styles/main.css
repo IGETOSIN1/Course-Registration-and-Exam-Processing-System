@@ -1,0 +1,65 @@
+#first-inner-div
+{
+ margin-top: 200px; color: window; font-family: Segoe UI; font-size: 16px; font-weight: bold; 
+}
+
+#marquee-style{
+    margin-top: 150px; margin-left: 120px; margin-right: 230px; font-family:@Microsoft YaHei Calibri; font-size: 15px; margin-bottom: 5px;
+}
+#login-div1{
+    margin-left: 300px; font-family: Segoe UI; font-weight: bold; font-size: 14px; margin-bottom: 3px; border: 1px solid blueviolet; width: 300px;
+}
+#login-div2{
+ margin-left: 250px; width: 616px; border: 2px solid blueviolet; height: 265px; background-color: crimson; color: Black; border-radius: 3px;   
+}
+#p-float-right{
+  float: right; margin-right: 40px;  
+}
+#p-float-left{
+  float: left; margin-left: 15px;  
+}
+.button-reset{
+  /*  margin-left: 250px; color: crimson; background-color: thistle; font-family: Segoe UI Semibold; font-size: 15px;  */
+}
+.button-save{
+    /* margin-left: 20px; background-color: blueviolet; color: Window; font-family: Segoe UI Semibold; font-size: 14px; */
+}
+.dd-title{
+     margin-left: 15px; color: blueviolet; font-family: Segoe UI; font-weight: bold; width:291px; height:22px; color:blueviolet;
+}
+.lab-title{
+    font-family: Segoe UI Semibold; font-size: 14px; color: Window;
+}
+.txt-panel2{
+    margin-top: 3px; font-family: Segoe UI; font-weight: bold; text-align: center; width: 270px;
+}
+.lab-title1{
+    margin-left: 155px; margin-top: -10px;
+}
+.txt-password{
+     margin-top: 3px; margin-bottom: 5px; font-family: Segoe UI; font-weight: bold; text-align: center; width: 250px;
+}
+.para1{
+     margin-left: 155px;
+}
+.button-reset{
+    margin-left: 220px; color: crimson; background-color: thistle; font-family: Segoe UI Semibold; font-size: 15px; width:92px; height: 30px;
+}
+.button-save{
+    margin-left: 20px; background-color: blueviolet; color: Window; font-family: Segoe UI Semibold; font-size: 14px; width: 92px; height: 30px;
+}
+.hr1{
+ /*  margin: auto;   */
+}
+.hr2{
+    margin-top: 140px;
+}
+.pzz1{
+    margin-left: 15px; margin-top: 15px;
+}
+.divert{
+    margin-top: -28px;
+}
+.lab-title5{
+    font-family: Segoe UI Semibold; font-size: 14px; color: Window;
+}

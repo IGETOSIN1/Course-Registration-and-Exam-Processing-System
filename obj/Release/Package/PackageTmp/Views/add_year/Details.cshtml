@@ -1,0 +1,35 @@
+﻿@model Web_Application_Higher_Institution.table_calendar_year
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>table_calendar_year</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.calendar_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calendar_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.p_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

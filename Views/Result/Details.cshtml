@@ -1,0 +1,144 @@
+﻿@model Web_Application_Higher_Institution.table_result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Cademic Calendar
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Academic_Calender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            Student Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_Name)
+        </dd>
+
+        <dt>
+           Matric No
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matric_No)
+        </dd>
+
+        <dt>
+            Course Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course_Title)
+        </dd>
+
+        <dt>
+            Course Code
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt>
+            Registered By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registered_By)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Updated)
+        </dd>
+
+        <dt>
+            Last Updated By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Updated_By)
+        </dd>
+
+        <dt>
+            S/N
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.p_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

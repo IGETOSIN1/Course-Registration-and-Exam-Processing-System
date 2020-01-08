@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Web_Application_Higher_Institution.table_grading_system>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Grading Module</h2>
+<h4 class="text-center text-info">Current Grading System</h4>
+<hr />
+<p>
+    @Html.ActionLink("Add New Grading", "Create")
+</p>
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped text-center">
+    <tr>
+        <th class="text-center">
+           Mark Range
+        </th>
+        <th class="text-center">
+            GP. Range
+        </th>
+        <th class="text-center">
+           Grade
+        </th>
+        <th class="text-center">
+            Remark
+        </th>
+        <th class="text-center">
+            Classification
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.from1) - @Html.DisplayFor(modelItem => item.to1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gp1) - @Html.DisplayFor(modelItem => item.gp2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.classification)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.p_id })
+        </td>
+    </tr>
+}
+
+</table>

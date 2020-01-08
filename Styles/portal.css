@@ -1,0 +1,102 @@
+body
+{
+background-color: royalblue; color: Window;  background-image:url('images/img3.jpg'); background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    background-attachment: fixed;  background-size: cover;
+}
+
+ .label_left
+    {
+       float: left; font-size: 15px; margin-left: 5px; 
+    }
+    
+     .label_right
+    {
+        float: right; font-size: 15px; margin-right: 5px;
+    }
+    
+     .label_middle
+    {
+        font-size: 15px; margin-right: 5px; margin-left: 235px;
+    }
+    
+    .tfield
+    {
+       width: 200px; height: 19px; border-radius: 2px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center; 
+     }
+     
+    .tfield_middle
+    {
+       width: 140px; height: 19px; border-radius: 2px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center; 
+     }
+     
+     .dropd_short
+     {
+        width: 150px; height: 25px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center;  
+     }
+     
+     .dropd_middle
+     {
+        width: 180px; height: 25px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center;  
+     }
+     
+      .dropd_long
+     {
+        width: 210px; height: 25px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center;  
+     }
+     
+     .tfield_short
+     {
+        width: 80px; height: 19px; border-radius: 2px; margin-top: 2px; margin-bottom: 6px; color: firebrick; text-align: center;  
+     }
+     
+     .tfield_imagefile
+     {
+       width: 200px; height: 23px; border-radius: 2px; margin-top: 2px; margin-bottom: 6px;  
+     }
+     
+      .calendar
+     {
+       width: 200px; margin-top: 2px; margin-top: 2px; margin-bottom: 3px; background-color: firebrick;  
+     }
+     
+      .calendar_button
+     {
+       width: 30px; height: 22px; color: Window; background-color: firebrick; width: 133px; margin-bottom: 6px; margin-top: -3px;
+     }
+     
+      .calendar_textbox
+     {
+       width: 200px; height: 16px; width: 200px; margin-bottom: 6px; margin-top: -4px;
+     }
+     
+     .button_submit
+     {
+       width: 107px; height: 32px; color: Window; background-color: firebrick; margin-bottom: 6px; margin-top: 3px; margin-left: 10px; border: 3px solid window;  font-family: Segoe UI; font-size: 12px; 
+     }
+     
+     .button_reset
+     {
+        width: 107px; height: 32px; color: Window; background-color: firebrick; margin-bottom: 6px; margin-top: 3px; margin-left: 400px; border: 3px solid window; font-family: Segoe UI; font-size: 12px; 
+     }
+     
+     .button_find
+     {
+       width: 57px; height: 22px; color: Window; background-color: firebrick; margin-left: 10px; border: 3px solid window;  font-family: Segoe UI; font-size: 12px; 
+     }
+     
+      .result_panel
+     {
+        color: Window; background-color: firebrick; margin-bottom: 2px; margin-top: -3px; 
+     }
+     
+      .result_label
+     {
+        color: Window; background-color: firebrick; margin-left: 150px;  font-family: Segoe UI; font-size: 12px; 
+     }
+     
+      .logo
+     {
+        width: 160px; height: 50px; 
+     }

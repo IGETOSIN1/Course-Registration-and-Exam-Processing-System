@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Web_Application_Higher_Institution.table_user>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Account Module</h2>
+<h4 class="text-center text-info">Current User's List</h4>
+<hr />
+<p>
+    @Html.ActionLink("Create User Account", "Create")
+</p>
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped text-center">
+    <tr>
+        <th class="text-center">
+          Name
+        </th>
+      
+        <th class="text-center">
+            User Name
+        </th>
+      
+        <th class="text-center">
+            Role
+        </th>
+      
+        <th class="text-center">
+            Last Updated
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.full_name)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.user_name)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.role)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.dat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.p_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.p_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.p_id })
+        </td>
+    </tr>
+}
+
+</table>

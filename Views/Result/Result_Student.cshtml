@@ -1,0 +1,187 @@
+﻿@model IEnumerable<Web_Application_Higher_Institution.table_result>
+
+@{
+    ViewBag.Title = "Result_Student";
+    Layout = "~/Views/Shared/_Layout_Stud.cshtml";
+}
+
+<br />
+<h2>Semester Result</h2>
+<hr />
+<div>
+
+    <div class="form-group col-xs-4">
+        <label class="control-label col-md-2">Level</label>
+        <div class="col-md-10">
+            <select class="form-control" ng-model="level"  ng-change="leve()"><option ng-repeat="cy in jlevel" value="{{cy.Level}}">{{cy.Level}}</option></select>
+        </div>
+    </div>
+
+    <div class="form-group col-xs-4">
+        <label class="control-label col-md-2">Sem.</label>
+        <div class="col-md-10">
+            <select class="form-control" ng-model="semester" ng-change="semeste()"><option ng-repeat="cs in jsemester" value="{{cs.Semester}}">{{cs.Semester}}</option></select>
+        </div>
+    </div>
+
+</div>
+<br /><br />
+<hr />
+<h4 class="text-center text-info">Current Semester Result(s)</h4>
+
+<h5 style=" text-align: center; color:darkred" class="error_message"> {{report}} </h5>
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped text-center">
+    <tr>
+        <th class="text-center">
+            Student Name
+        </th>
+        <th class="text-center">
+            Matric No.
+        </th>
+        <th class="text-center">
+            Course Title
+        </th>
+        <th class="text-center">
+            Unit
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Level)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.GP)
+        </th>
+        <th class="text-center">
+            Total GP.
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Remark)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    <tr ng-repeat="ct in jtable">
+        <td>
+            {{ct.Student_Name}}
+        </td>
+        <td>
+            {{ct.Matric_No}}
+        </td>
+        <td>
+            {{ct.Course_Title}}
+        </td>
+        <td>
+            {{ct.Unit}}
+        </td>
+        <td>
+            {{ct.Level}}
+        </td>
+        <td>
+            {{ct.Semester}}
+        </td>
+
+        <td>
+            {{ct.Score}}
+        </td>
+        <td>
+            {{ct.GP}}
+        </td>
+        <td>
+            {{ct.GP*ct.Unit}}
+        </td>
+        <td>
+            {{ct.Grade}}
+        </td>
+        <td>
+            {{ct.Remark}}
+        </td>
+
+       <!-- <td>
+            <a ng-href="/Result/Edit/{{ct.p_id}}">Edit</a> ||
+            <a ng-href="/Result/Detail/{{ct.p_id}}">Detail</a> ||
+            <a ng-href="/Result/Delete/{{ct.p_id}}">Delete</a>
+        </td>-->
+    </tr>
+
+
+</table>
+<!--#############################################################################################-->
+<iframe src="/set_grade_remark.aspx" style="width:50%;height:50%; visibility:hidden;"></iframe>
+<!--#############################################################################################-->
+
+<script type="text/javascript">
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $window, $http) {
+
+        $http.post("/Result/Level_std").then(function (response) {
+           // alert(response.data);
+            $scope.jlevel = response.data;
+        });
+
+        $http.post("/Result/Semester_std").then(function (response) {
+           // alert(response.data);
+            $scope.jsemester = response.data;
+        });
+
+        $scope.semeste = function () {
+            $http.post("/Result/result_semester_std?level=" + $scope.level + "&&semester=" + $scope.semester).then(function (response) {
+                //alert(response.data);
+                $scope.jtable = response.data;
+            });
+        }
+
+        $scope.leve = function () {
+            $http.post("/Result/result_level_std?level=" + $scope.level).then(function (response) {
+               // alert(response.data);
+                $scope.jtable = response.data;
+            });
+        }
+
+       /* $http.post("/Result/Course").then(function (response) {
+            $scope.jcourse = response.data;
+        });
+
+        $http.post("/Result/Name").then(function (response) {
+            $scope.jname = response.data;
+        });
+
+        $http.post("/Result/Faculty").then(function (response) {
+           // alert(response.data);
+            $scope.jfaculty = response.data;
+        });
+
+        $scope.displayDepartment = function () {
+            $http.post("/Result/department?faculty=" + $scope.faculty).then(function (response) {
+                $scope.jdepartment = response.data;
+               // alert(response.data);
+            });
+        }
+
+        $scope.cours = function () {
+            //  alert($scope.year + $scope.faculty + $scope.department + $scope.semester);
+            $http.post("/Result/result_course?year=" + $scope.year + "&&faculty=" + $scope.faculty + "&&department=" + $scope.department + "&&semester=" + $scope.semester+"&&course="+$scope.course).then(function (response) {
+                alert(response.data);
+                $scope.jtable = response.data;
+            });
+        }
+
+        $scope.nam = function () {
+            //  alert($scope.year + $scope.faculty + $scope.department + $scope.semester);
+            $http.post("/Result/result_name?year=" + $scope.year + "&&faculty=" + $scope.faculty + "&&department=" + $scope.department + "&&semester=" + $scope.semester + "&&name=" + $scope.name).then(function (response) {
+                alert(response.data);
+                $scope.jtable = response.data;
+            });
+        }*/
+
+    });
+</script>

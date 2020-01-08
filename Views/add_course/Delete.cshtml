@@ -1,0 +1,72 @@
+﻿@model Web_Application_Higher_Institution.table_course_add
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3 class="text-danger">Are you sure you want to delete this?</h3>
+<div>
+   <!-- <h4>table_course_add</h4>-->
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.registered_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registered_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Confirm Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

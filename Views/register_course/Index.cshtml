@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Web_Application_Higher_Institution.table_course_register>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Stud.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Register Course", "Create")
+</p>
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped">
+    <tr>
+        <th>
+            Student's Name
+        </th>
+        <th>
+            Matric No
+        </th>
+        <th>
+            Course Name
+        </th>
+        <th>
+            Course Code
+        </th>
+       
+        <th>
+           Unit
+        </th>
+       
+        <th>
+            Level
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+      
+        <th>
+            Date
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.matric_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.course)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.course_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.p_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.p_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.p_id })
+        </td>
+    </tr>
+}
+
+</table>

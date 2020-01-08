@@ -1,0 +1,66 @@
+﻿@model Web_Application_Higher_Institution.table_course_add
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<br/><h2>Course Module</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <h4 class="text-center text-info"> Add New Course</h4>
+    <hr />
+    <h5 class="text-center text-warning">@ViewBag.Result</h5>
+    <div class="form-horizontal col-lg-7" style="float: none; margin: 0 auto;">
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class = "control-label col-md-2">Course</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.course, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.course, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Course Code</label>
+            <div class="col-md-10 col-lg-5">
+                @Html.EditorFor(model => model.course_code, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.course_code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Level</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Level, (IEnumerable<SelectListItem>)ViewBag.leve, "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Unit</label>
+            <div class="col-md-10 col-lg-5">
+                @Html.EditorFor(model => model.Unit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Confirm Course" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

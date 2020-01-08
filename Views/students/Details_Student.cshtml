@@ -1,0 +1,269 @@
+﻿@model Web_Application_Higher_Institution.table_students
+
+@{
+    ViewBag.Title = "Details_Student";
+    Layout = "~/Views/Shared/_Layout_Stud.cshtml";
+}
+
+<br />
+<h2>Details</h2>
+<hr />
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+
+            Student Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student_name)
+        </dd>
+
+        <dt>
+            Matric/ Admission No.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matric_no)
+        </dd>
+
+        <dt>
+            Date of Birth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_birth)
+        </dd>
+
+        <dt>
+            Place of Birth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.place_of_birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nationality)
+        </dd>
+
+        <dt>
+            Marital Status
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marital_status)
+        </dd>
+
+        <dt>
+            Age
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+
+        <dt>
+            Name of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_name)
+        </dd>
+
+        <dt>
+            Address of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_address)
+        </dd>
+
+        <dt>
+            Relationship of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_relationship)
+        </dd>
+
+        <dt>
+            Occupation of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_occupation)
+        </dd>
+
+        <dt>
+            Phone No. of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_phone)
+        </dd>
+
+        <dt>
+            Email of Sponsor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sponsor_email)
+        </dd>
+
+        <dt>
+            Highest Qualification
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.highest_qualification)
+        </dd>
+
+        <dt>
+            Qualification
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qualification)
+        </dd>
+
+        <dt>
+            Year of Admission
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year_of_admission)
+        </dd>
+
+        <dt>
+            Faculty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.faculty)
+        </dd>
+
+        <dt>
+            Department
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department)
+        </dd>
+
+        <dt>
+            Program
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.program)
+        </dd>
+
+        <dt>
+            Mode of Study
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mode)
+        </dd>
+
+        <dt>
+            Campus
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.campus)
+        </dd>
+
+        <dt>
+            Note
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note)
+        </dd>
+
+        <dt>
+            Status
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            Registered By
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registered_by)
+        </dd>
+
+        <dt>
+            Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            Last Updated
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit_Student", new { id = Model.p_id }) |
+    @Html.ActionLink("Back to List", "Index_Student")
+</p>
